@@ -1,0 +1,69 @@
+
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
+
+# shortcut to this dotfiles path is $ZSH
+export ZSH=$HOME/.dotfiles
+
+# Stash your environment variables in ~/.localrc. This means they'll stay out
+# of your main dotfiles repository (which may be public, like this one), but
+# you'll have access to them in your scripts.
+if [[ -a ~/.localrc ]]
+then
+  source ~/.localrc
+fi
+
+# Base PATH
+PATH="$PATH:/usr/local/bin:/usr/local/sbin:/sbin:/usr/sbin:/bin:/usr/bin"
+
+# all of our zsh files
+typeset -U config_files
+config_files=($ZSH/**/*.zsh)
+
+# load the path files
+for file in ${(M)config_files:#*/path.zsh}
+do
+  source $file
+done
+
+# load everything but the path and completion files
+for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
+do
+  source $file
+done
+
+# load every completion after autocomplete loads
+for file in ${(M)config_files:#*/completion.zsh}
+do
+  source $file
+done
+
+unset config_files
+
+# Load AWS credentials
+if [ -f ~/.aws/aws_variables ]; then
+  source ~/.aws/aws_variables
+fi
+
+autoload -U compinit
+compinit
+
+# In case a plugin adds a redundant path entry, remove duplicate entries
+# from PATH
+#
+# This snippet is from Mislav Marohnić <mislav.marohnic@gmail.com>'s
+# dotfiles repo at https://github.com/mislav/dotfiles
+dedupe_path() {
+  typeset -a paths result
+  paths=($path)
+
+  while [[ ${#paths} -gt 0 ]]; do
+    p="${paths[1]}"
+    shift paths
+    [[ -z ${paths[(r)$p]} ]] && result+="$p"
+  done
+
+  export PATH=${(j+:+)result}
+}
+
+dedupe_path
+

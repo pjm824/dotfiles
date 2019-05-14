@@ -1,0 +1,25 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+    shell:
+      stdout: true
+
+- clean: ['~', '~/.config']
+
+- shell:
+    - ./brew/install-brew.sh
+    - ./system/install-font.sh
+    - echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells
+    - chsh -s /usr/local/bin/zsh
+    - ./zsh/install-zgen.sh
+
+- link:
+    ~/.config/nvim/init.vim: vim/init.vim
+    ~/.gitconfig: gitconfig
+    ~/.httpie/config.json: httpie/config.json
+    ~/.vimrc: vim/vimrc
+    ~/.zshrc: zsh/zshrc
+
+
+
