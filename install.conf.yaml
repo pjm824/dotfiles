@@ -18,8 +18,6 @@
     ~/.config/nvim/init.vim: vim/init.vim
     ~/.gitconfig: gitconfig
     ~/.httpie/config.json: httpie/config.json
+    ~/.tmux.conf: tmux/tmux.conf
     ~/.vimrc: vim/vimrc
     ~/.zshrc: zsh/zshrc
-
-
-

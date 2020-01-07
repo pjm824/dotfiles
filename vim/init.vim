@@ -13,18 +13,34 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'scrooloose/nerdcommenter'
 Plug 'vim-airline/vim-airline'
 Plug 'sbdchd/neoformat'
-
+Plug 'junegunn/seoul256.vim'
+Plug 'christoomey/vim-tmux-navigator'
 
 " autocomplete
 Plug 'davidhalter/jedi-vim'
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-let g:deoplete#enable_at_startup = 1
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+
+" enable ncm2 for all buffers
+autocmd BufEnter * call ncm2#enable_for_buffer()
+
+" IMPORTANT: :help Ncm2PopupOpen for more information
+set completeopt=noinsert,menuone,noselect
+
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-path'
+Plug 'ncm2/ncm2-syntax' | Plug 'Shougo/neco-syntax'
+
+" Python
+Plug 'ncm2/ncm2-jedi'
+
+
+Plug 'nvie/vim-flake8'
+
+" Java autocomplete
+"Plug 'ObserverOfTime/ncm2-jc2', {'for': ['java', 'jsp']}
+"Plug 'artur-shaik/vim-javacomplete2', {'for': ['java', 'jsp']}
+
 
 "Plug 'junegunn/fzf'
 "Plug 'sheerun/vim-polyglot'
@@ -50,7 +66,6 @@ let g:deoplete#enable_at_startup = 1
 "Plug 'lucapette/vim-textobj-underscore'
 "Plug 'nathanaelkane/vim-indent-guides'
 "Plug 'wellle/targets.vim'
-"Plug 'christoomey/vim-tmux-navigator'
 "Plug 'Raimondi/delimitMate'
 "Plug 'Shougo/neocomplete'
 "Plug 'godlygeek/tabular'
@@ -78,4 +93,38 @@ let g:jedi#completions_enabled = 0
 
 " open the go-to function in split, not another buffer
 let g:jedi#use_splits_not_buffers = "right"
+
+" run linter on save
+autocmd BufWritePost *.py call flake8#Flake8()
+
+
+
+
+
+
+
+
+
+
+
+
+" show flake 8 in gutter
+let g:flake8_show_in_gutter=1
+
+""""" ncm2
+" suppress the annoying 'match x of y', 'The only match' and 'Pattern not
+" found' messages
+set shortmess+=c
+
+" CTRL-C doesn't trigger the InsertLeave autocmd . map to <ESC> instead.
+inoremap <c-c> <ESC>
+
+" When the <Enter> key is pressed while the popup menu is visible, it only
+" hides the menu. Use this mapping to close the menu and also start a new
+" line.
+inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
+
+" Use <TAB> to select the popup menu:
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
