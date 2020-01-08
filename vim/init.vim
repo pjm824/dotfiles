@@ -1,78 +1,31 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'chrisbra/color_highlight'
-Plug 'rafi/awesome-vim-colorschemes'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-git'
 Plug 'airblade/vim-gitgutter'
-Plug 'jistr/vim-nerdtree-tabs'
-Plug 'scrooloose/nerdtree'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'JazzCore/ctrlp-cmatcher'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'scrooloose/nerdcommenter'
-Plug 'vim-airline/vim-airline'
-Plug 'sbdchd/neoformat'
-Plug 'junegunn/seoul256.vim'
-Plug 'christoomey/vim-tmux-navigator'
+Plug 'chrisbra/color_highlight'         " highlight color names and codes in the same color that they represent
+Plug 'christoomey/vim-tmux-navigator'   " navigate between tmux and vim
+Plug 'tpope/vim-git'                    " git runtime files(syntax, indent, etc)
+Plug 'Yggdroot/indentLine'              " show indent lines
 
-" autocomplete
-Plug 'davidhalter/jedi-vim'
-Plug 'ncm2/ncm2'
-Plug 'roxma/nvim-yarp'
-
-" enable ncm2 for all buffers
-autocmd BufEnter * call ncm2#enable_for_buffer()
-
-" IMPORTANT: :help Ncm2PopupOpen for more information
-set completeopt=noinsert,menuone,noselect
-
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-path'
-Plug 'ncm2/ncm2-syntax' | Plug 'Shougo/neco-syntax'
-
-" Python
-Plug 'ncm2/ncm2-jedi'
+""" styling
+Plug 'vim-airline/vim-airline'          " for the status line at the bottom
+Plug 'junegunn/seoul256.vim'            " theme
 
 
-Plug 'nvie/vim-flake8'
-
-" Java autocomplete
-"Plug 'ObserverOfTime/ncm2-jc2', {'for': ['java', 'jsp']}
-"Plug 'artur-shaik/vim-javacomplete2', {'for': ['java', 'jsp']}
-
-
-"Plug 'junegunn/fzf'
-"Plug 'sheerun/vim-polyglot'
-"Plug 'honza/vim-snippets'
-"Plug 'scrooloose/syntastic'
-"Plug 'xsunsmile/showmarks'
-"Plug 'gregsexton/gitv'
-"Plug 'justinmk/vim-sneak'
-"Plug 'henrik/vim-indexed-search'
-"Plug 'nelstrom/vim-visual-star-search'
-"Plug 'mileszs/ack.vim'
-"Plug 'skwp/greplace.vim'
-"Plug 'Lokaltog/vim-easymotion'
-" These bundles introduce new textobjects into vim,
-" For example the Ruby one introduces the 'r' text object
-" such that 'var' gives you Visual Around Ruby
-"Plug 'austintaylor/vim-indentobject'
-"Plug 'coderifous/textobj-word-column.vim'
-"Plug 'kana/vim-textobj-datetime'
-"Plug 'kana/vim-textobj-entire'
-"Plug 'kana/vim-textobj-function'
-"Plug 'kana/vim-textobj-user'
-"Plug 'lucapette/vim-textobj-underscore'
-"Plug 'nathanaelkane/vim-indent-guides'
-"Plug 'wellle/targets.vim'
-"Plug 'Raimondi/delimitMate'
-"Plug 'Shougo/neocomplete'
-"Plug 'godlygeek/tabular'
-"Plug 'tomtom/tcomment_vim'
-"Plug 'vim-scripts/camelcasemotion'
-"Plug 'kristijanhusak/vim-multiple-cursors'
-"Plug 'bogado/file-line'
+"""  plugins to try...
+" Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'junegunn/fzf'
+" Plug 'preservim/nerdtree'
+" Plug 'sbdchd/neoformat'               " code formatter
+" Plug 'tpope/vim-fugitive'
+" Plug 'ncm2/ncm2'                      " autocomplete
+" Plug 'Shougo/neocomplete'             " autocomplete
+" Plug 'justinmk/vim-sneak'             " jump to any location specified by two characters
+" Plug 'Lokaltog/vim-easymotion'        " improvements to navigating
+" Plug 'wellle/targets.vim'             " add more text objects
+" Plug 'Raimondi/delimitMate'           " automatically close parans, brackets, etc
+" Plug 'godlygeek/tabular'              " easily align texts
+" Plug 'tomtom/tcomment_vim'            " language aware comments
+" Plug 'vim-scripts/camelcasemotion'    " navigate inside camel case words
 
 call plug#end()
 
@@ -87,34 +40,7 @@ let g:python3_host_prog = '/Users/paul/.pyenv/versions/3.6.5/bin/python'
 
 
 """""""""" Plugin Specific settings """""""""""
-""""" jedi vim
-" disable autocompletion, cause we use deoplete for completion
-let g:jedi#completions_enabled = 0
 
-" open the go-to function in split, not another buffer
-let g:jedi#use_splits_not_buffers = "right"
-
-" run linter on save
-autocmd BufWritePost *.py call flake8#Flake8()
-
-
-
-
-
-
-
-
-
-
-
-
-" show flake 8 in gutter
-let g:flake8_show_in_gutter=1
-
-""""" ncm2
-" suppress the annoying 'match x of y', 'The only match' and 'Pattern not
-" found' messages
-set shortmess+=c
 
 " CTRL-C doesn't trigger the InsertLeave autocmd . map to <ESC> instead.
 inoremap <c-c> <ESC>
