@@ -20,4 +20,5 @@
     ~/.httpie/config.json: httpie/config.json
     ~/.tmux.conf: tmux/tmux.conf
     ~/.vimrc: vim/vimrc
+    ~/.ideavimrc: vim/ideavimrc
     ~/.zshrc: zsh/zshrc
