@@ -19,6 +19,7 @@ Plug 'junegunn/seoul256.vim'            " theme
 " Plug 'tpope/vim-fugitive'
 " Plug 'ncm2/ncm2'                      " autocomplete
 " Plug 'Shougo/neocomplete'             " autocomplete
+" Plug 'ervandew/supertab               " perform completions in insert mode with tab
 " Plug 'justinmk/vim-sneak'             " jump to any location specified by two characters
 " Plug 'Lokaltog/vim-easymotion'        " improvements to navigating
 " Plug 'wellle/targets.vim'             " add more text objects
