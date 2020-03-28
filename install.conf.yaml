@@ -7,18 +7,17 @@
 
 - clean: ['~', '~/.config']
 
-- shell:
-    - ./brew/install-brew.sh
-    - ./system/install-font.sh
-    - echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells
-    - chsh -s /usr/local/bin/zsh
-    - ./zsh/install-zgen.sh
-
 - link:
     ~/.config/nvim/init.vim: vim/init.vim
     ~/.gitconfig: gitconfig
-    ~/.httpie/config.json: httpie/config.json
     ~/.tmux.conf: tmux/tmux.conf
     ~/.vimrc: vim/vimrc
     ~/.ideavimrc: vim/ideavimrc
     ~/.zshrc: zsh/zshrc
+    ~/.zpreztorc: zsh/zpreztorc
+    ~/.p10k.zsh: zsh/p10k.zsh
+
+- shell:
+    - ./system/install-font.sh
+    - echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells
+    - chsh -s /usr/local/bin/zsh

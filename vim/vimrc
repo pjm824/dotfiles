@@ -54,8 +54,7 @@ set shiftwidth=0
 set expandtab
 
 " Auto indent pasted text
-nnoremap p p=`]<C-o>
-nnoremap P P=`]<C-o>
+" nnoremap p p=`]<C-o>
 
 filetype plugin indent on
 

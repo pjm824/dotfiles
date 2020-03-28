@@ -1,5 +1,11 @@
 
-zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 
 # shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles
@@ -39,11 +45,6 @@ done
 
 unset config_files
 
-# Load AWS credentials
-if [ -f ~/.aws/aws_variables ]; then
-  source ~/.aws/aws_variables
-fi
-
 autoload -U compinit
 compinit
 
@@ -67,3 +68,19 @@ dedupe_path() {
 
 dedupe_path
 
+# source fzf bindings
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+# hotkeys for command search
+bindkey -v
+bindkey '^R' history-incremental-search-backward
+#bindkey "$terminfo[kcuu1]" history-substring-search-up
+#bindkey "$terminfo[kcud1]" history-substring-search-down
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

@@ -3,6 +3,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'chrisbra/color_highlight'         " highlight color names and codes in the same color that they represent
 Plug 'christoomey/vim-tmux-navigator'   " navigate between tmux and vim
+Plug '/usr/local/opt/fzf'               " fzf
+Plug 'junegunn/fzf.vim'                 " fzf
 Plug 'tpope/vim-git'                    " git runtime files(syntax, indent, etc)
 Plug 'Yggdroot/indentLine'              " show indent lines
 
