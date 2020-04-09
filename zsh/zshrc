@@ -78,9 +78,9 @@ fi
 
 # hotkeys for command search
 bindkey -v
-bindkey '^R' history-incremental-search-backward
 bindkey '^P' up-history
 bindkey '^N' down-history
+bindkey '^R' history-incremental-search-backward
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
