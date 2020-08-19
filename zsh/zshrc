@@ -1,79 +1,46 @@
-
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-
 # shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles
-
-# Stash your environment variables in ~/.localrc. This means they'll stay out
-# of your main dotfiles repository (which may be public, like this one), but
-# you'll have access to them in your scripts.
-if [[ -a ~/.localrc ]]
-then
-  source ~/.localrc
-fi
-
-# Base PATH
-PATH="$PATH:/usr/local/bin:/usr/local/sbin:/sbin:/usr/sbin:/bin:/usr/bin"
 
 # all of our zsh files
 typeset -U config_files
 config_files=($ZSH/**/*.zsh)
 
+for file in $config_files
+do
+  source $file
+done
+
 # load the path files
-for file in ${(M)config_files:#*/path.zsh}
-do
-  source $file
-done
-
-# load everything but the path and completion files
-for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
-do
-  source $file
-done
-
-# load every completion after autocomplete loads
-for file in ${(M)config_files:#*/completion.zsh}
-do
-  source $file
-done
+#for file in ${(M)config_files:#*/path.zsh}
+#do
+#  source $file
+#done
+#
+## load everything but the completion files
+#for file in ${config_files:#*/completion.zsh}
+#do
+#  source $file
+#done
+#
+## load every completion after autocomplete loads
+#for file in ${(M)config_files:#*/completion.zsh}
+#do
+#  source $file
+#done
 
 unset config_files
 
 autoload -U compinit
 compinit
 
-# In case a plugin adds a redundant path entry, remove duplicate entries
-# from PATH
-#
-# This snippet is from Mislav Marohnić <mislav.marohnic@gmail.com>'s
-# dotfiles repo at https://github.com/mislav/dotfiles
-dedupe_path() {
-  typeset -a paths result
-  paths=($path)
-
-  while [[ ${#paths} -gt 0 ]]; do
-    p="${paths[1]}"
-    shift paths
-    [[ -z ${paths[(r)$p]} ]] && result+="$p"
-  done
-
-  export PATH=${(j+:+)result}
-}
-
-dedupe_path
-
-# source fzf bindings
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+# Source zshlocal file if exists
+if [[ -f ~/.zshlocal ]]; then;
+    source ~/.zshlocal
 fi
 
 # hotkeys for command search
@@ -81,6 +48,3 @@ bindkey -v
 bindkey '^P' up-history
 bindkey '^N' down-history
 bindkey '^R' history-incremental-search-backward
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
