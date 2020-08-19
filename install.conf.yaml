@@ -22,3 +22,4 @@
     ~/.zshrc: zsh/zshrc
     ~/.zpreztorc: zsh/zpreztorc
     ~/.zprofile: zsh/zprofile
+    ~/.gitconfig: git/gitconfig
