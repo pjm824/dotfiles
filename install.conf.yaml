@@ -7,17 +7,18 @@
 
 - clean: ['~', '~/.config']
 
+- shell:
+    - ./setup/font.sh
+    - ./setup/keyrate.sh
+    - ./setup/prezto.sh
+    - ./setup/vim-plug.sh
+    - echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells
+    - chsh -s /usr/local/bin/zsh
+
 - link:
     ~/.config/nvim/init.vim: vim/init.vim
-    ~/.gitconfig: gitconfig
-    ~/.tmux.conf: tmux/tmux.conf
     ~/.vimrc: vim/vimrc
     ~/.ideavimrc: vim/ideavimrc
     ~/.zshrc: zsh/zshrc
     ~/.zpreztorc: zsh/zpreztorc
-    ~/.p10k.zsh: zsh/p10k.zsh
-
-- shell:
-    - ./system/install-font.sh
-    - echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells
-    - chsh -s /usr/local/bin/zsh
+    ~/.zprofile: zsh/zprofile
