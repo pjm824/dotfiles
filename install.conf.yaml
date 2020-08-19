@@ -16,9 +16,9 @@
     - chsh -s /usr/local/bin/zsh
 
 - link:
-    ~/.config/nvim/init.vim: vim/init.vim
-    ~/.vimrc: vim/vimrc
-    ~/.ideavimrc: vim/ideavimrc
+    ~/.config/nvim/init.vim: nvim/init.vim
+    ~/.vimrc: nvim/vimrc
+    ~/.ideavimrc: nvim/ideavimrc
     ~/.zshrc: zsh/zshrc
     ~/.zpreztorc: zsh/zpreztorc
     ~/.zprofile: zsh/zprofile

@@ -10,24 +10,6 @@ do
   source $file
 done
 
-# load the path files
-#for file in ${(M)config_files:#*/path.zsh}
-#do
-#  source $file
-#done
-#
-## load everything but the completion files
-#for file in ${config_files:#*/completion.zsh}
-#do
-#  source $file
-#done
-#
-## load every completion after autocomplete loads
-#for file in ${(M)config_files:#*/completion.zsh}
-#do
-#  source $file
-#done
-
 unset config_files
 
 autoload -U compinit
@@ -43,8 +25,12 @@ if [[ -f ~/.zshlocal ]]; then;
     source ~/.zshlocal
 fi
 
-# hotkeys for command search
-bindkey -v
-bindkey '^P' up-history
-bindkey '^N' down-history
-bindkey '^R' history-incremental-search-backward
+# Correct spelling for commands
+setopt correct
+
+# don't expand aliases _before_ completion has finished (like: git comm-[tab])
+setopt complete_aliases
+
+# Long running processes should return time after they complete. Specified in seconds.
+REPORTTIME=2
+TIMEFMT="%U user %S system %P cpu %*Es total"

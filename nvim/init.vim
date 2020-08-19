@@ -8,11 +8,12 @@ Plug 'Yggdroot/indentLine'              " show indent lines
 
 """ styling
 Plug 'vim-airline/vim-airline'          " for the status line at the bottom
-Plug 'junegunn/seoul256.vim'            " theme
+"Plug 'junegunn/seoul256.vim'            " theme
+Plug 'ajmwagar/vim-deus'
+
 
 
 """  plugins to try...
-" Plug 'christoomey/vim-tmux-navigator'   " navigate between tmux and vim
 " Plug 'ctrlpvim/ctrlp.vim'
 " Plug 'junegunn/fzf'
 " Plug 'preservim/nerdtree'
@@ -36,21 +37,7 @@ set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
 source ~/.vimrc
 
-" point vim to system python
-"let g:python_host_prog = '/full/path/to/neovim2/bin/python'
-let g:python3_host_prog = '/Users/paul/.pyenv/versions/3.6.5/bin/python'
-
-
 """""""""" Plugin Specific settings """""""""""
-
-
-" CTRL-C doesn't trigger the InsertLeave autocmd . map to <ESC> instead.
-inoremap <c-c> <ESC>
-
-" When the <Enter> key is pressed while the popup menu is visible, it only
-" hides the menu. Use this mapping to close the menu and also start a new
-" line.
-inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
 
 " Use <TAB> to select the popup menu:
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
