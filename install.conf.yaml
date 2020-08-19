@@ -13,6 +13,7 @@
     - ./setup/prezto.sh
     - ./setup/vim-plug.sh
     - ./setup/tpm.sh
+    - ./setup/sdkman.sh
     - echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells
     - chsh -s /usr/local/bin/zsh
 
