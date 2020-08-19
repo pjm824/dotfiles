@@ -12,6 +12,7 @@
     - ./setup/keyrate.sh
     - ./setup/prezto.sh
     - ./setup/vim-plug.sh
+    - ./setup/tpm.sh
     - echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells
     - chsh -s /usr/local/bin/zsh
 
@@ -23,3 +24,4 @@
     ~/.zpreztorc: zsh/zpreztorc
     ~/.zprofile: zsh/zprofile
     ~/.gitconfig: git/gitconfig
+    ~/.tmux.conf: tmux/tmux.conf
