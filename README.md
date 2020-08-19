@@ -1,2 +1,5 @@
-things needed to be installed separately (should be automated at some point):
-tpm: git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm (https://github.com/tmux-plugins/tpm)
+<ol>
+<li>run ./brew.sh</li>
+<li>run ./install</li>
+<li>start tmux and press prefix + i to load plugins</li>
+</ol>
