@@ -1,12 +1,20 @@
-# specify a directory to install
-cask_args appdir: '/Applications'
-
 brew 'coreutils'
 brew 'git'
 brew 'httpie'
 brew 'neovim'
-brew 'python'
 brew 'tmux'
 brew 'tree'
 brew 'wget'
 brew 'zsh'
+brew 'python'
+brew 'pyenv'
+brew 'pyenv-virtualenv'
+brew 'pipx'
+brew 'openssl'
+brew 'readline'
+brew 'sqlite3'
+brew 'xz'
+brew 'zlib'
+
+# specify a directory to install
+cask_args appdir: '/Applications'
