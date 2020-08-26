@@ -26,3 +26,6 @@
         default = simple
 [pull]
 	rebase = false
+[user]
+	name = paul-fastpay
+	email = paul@gofastpay.com

@@ -6,6 +6,8 @@ Plug 'christoomey/vim-tmux-navigator'   " navigate between tmux and vim
 Plug 'tpope/vim-git'                    " git runtime files(syntax, indent, etc)
 Plug 'Yggdroot/indentLine'              " show indent lines
 
+Plug 'dense-analysis/ale'
+
 """ styling
 Plug 'vim-airline/vim-airline'          " for the status line at the bottom
 "Plug 'junegunn/seoul256.vim'            " theme
