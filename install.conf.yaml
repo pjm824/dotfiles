@@ -19,6 +19,7 @@
 
 - link:
     ~/.config/nvim/init.vim: nvim/init.vim
+    ~/.config/nvim/ftplugin: nvim/ftplugin
     ~/.vimrc: nvim/vimrc
     ~/.ideavimrc: nvim/ideavimrc
     ~/.zshrc: zsh/zshrc

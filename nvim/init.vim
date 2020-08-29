@@ -1,18 +1,12 @@
+" source regular vimrc
+set runtimepath^=~/.vim runtimepath+=~/.vim/after
+let &packpath = &runtimepath
+source ~/.vimrc
+
+
 call plug#begin('~/.local/share/nvim/plugged')
-
-Plug 'airblade/vim-gitgutter'
-Plug 'chrisbra/color_highlight'         " highlight color names and codes in the same color that they represent
-Plug 'christoomey/vim-tmux-navigator'   " navigate between tmux and vim
-Plug 'tpope/vim-git'                    " git runtime files(syntax, indent, etc)
-Plug 'Yggdroot/indentLine'              " show indent lines
-
-Plug 'dense-analysis/ale'
-
-""" styling
-Plug 'vim-airline/vim-airline'          " for the status line at the bottom
-"Plug 'junegunn/seoul256.vim'            " theme
-Plug 'ajmwagar/vim-deus'
-
+for f in glob("~/.dotfiles/nvim/plugs/*.vim", 0, 1) | exe "source" f | endfor
+call plug#end()
 
 
 """  plugins to try...
@@ -31,17 +25,3 @@ Plug 'ajmwagar/vim-deus'
 " Plug 'godlygeek/tabular'              " easily align texts
 " Plug 'tomtom/tcomment_vim'            " language aware comments
 " Plug 'vim-scripts/camelcasemotion'    " navigate inside camel case words
-
-call plug#end()
-
-" source regular vimrc
-set runtimepath^=~/.vim runtimepath+=~/.vim/after
-let &packpath = &runtimepath
-source ~/.vimrc
-
-"""""""""" Plugin Specific settings """""""""""
-
-" Use <TAB> to select the popup menu:
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-

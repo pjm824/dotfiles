@@ -2,7 +2,7 @@ set nocompatible              " be iMproved, required
 set hidden
 
 " ================ General Config ====================
-let mapleader=' '                  " Set leader key to space
+let mapleader=" "                  " Set leader key to space
 set number                         " Line numbers are good
 set relativenumber                 " Relative numbers are even better
 set backspace=indent,eol,start     " Allow backspace in insert mode
@@ -73,3 +73,7 @@ nnoremap <silent> ,x :bn<CR>
 
 "Clear current search highlight by double tapping //
 nmap <silent> // :nohlsearch<CR>
+
+" Use <TAB> to select the popup menu:
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
