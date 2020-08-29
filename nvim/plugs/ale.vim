@@ -2,7 +2,7 @@ Plug 'dense-analysis/ale'
 
 let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace']}
 let g:airline#extensions#ale#enabled = 1
-"let g:ale_completion_autoimport = 1
+let g:ale_completion_autoimport = 1
 let g:float_preview#docked = 0
 
 nmap <leader>ag <plug>(ale_go_to_definition)

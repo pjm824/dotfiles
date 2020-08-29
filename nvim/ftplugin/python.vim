@@ -1,5 +1,5 @@
-let b:ale_linters = ['pyls', 'flake8', 'mypy']
-let b:ale_fixers = ['isort', 'black']
+let b:ale_linters = ['flake8', 'mypy']
+let b:ale_fixers = ['isort', 'black', 'reorder-python-imports']
 
 let g:ale_python_flake8_change_directory = 1
 let g:ale_python_flake8_executable = '/Users/paul.min/.pyenv/versions/neovim/bin/flake8'
