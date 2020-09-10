@@ -27,3 +27,6 @@
     ~/.zprofile: zsh/zprofile
     ~/.gitconfig: git/gitconfig
     ~/.tmux.conf: tmux/tmux.conf
+    ~/.sdkman/etc/config: 
+        force: true
+        path: sdkman/config

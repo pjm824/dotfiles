@@ -6,6 +6,7 @@ Plug 'junegunn/fzf'
 
 
 """  plugins to try...
+" Plug 'junegunn/peekaboo'
 " Plug 'tpope/vim-surround'
 " Plug 'tpope/vim-fugitive'
 " Plug 'justinmk/vim-sneak'             " jump to any location specified by two characters
