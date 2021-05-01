@@ -1,0 +1,32 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+      force: true
+      glob: true
+    shell:
+      stdout: true
+
+- clean: ['~', '~/.config']
+
+- shell:
+    - ./font.sh
+    - ./keyrate.sh
+    - ./prezto.sh
+    - ./vim-plug.sh
+    - ./sdkman.sh
+    - echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells
+    - chsh -s /usr/local/bin/zsh
+
+- link:
+    ~/.config/nvim/init.vim: ../nvim/init.vim
+    ~/.config/nvim/ftplugin: ../nvim/ftplugin 
+    ~/.vimrc: ../nvim/vimrc
+    ~/.ideavimrc: ../nvim/ideavimrc
+    ~/.zshrc: ../zsh/zshrc
+    ~/.zpreztorc: ../zsh/zpreztorc
+    ~/.zprofile: ../zsh/zprofile
+    ~/.gitconfig: ../git/gitconfig
+    ~/.sdkman/etc/config: ../sdkman/config
+    ~/.config/kitty/: 
+        path: '../kitty/*'
