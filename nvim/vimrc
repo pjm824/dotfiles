@@ -59,7 +59,12 @@ set smartcase       " ...unless we type a capital
 nnoremap 0 ^
 nnoremap ^ 0
 
-" ================== Windows =========================
+" ================= Buffers ========================
+map <Leader>n :bn<cr>
+map <Leader>p :bp<cr>
+map <Leader>d :bd<cr>  
+
+" ================= Windows ========================
 " Navigate windows using ctrl+h/j/k/l
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j

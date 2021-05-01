@@ -35,6 +35,9 @@ setopt complete_aliases
 REPORTTIME=2
 TIMEFMT="%U user %S system %P cpu %*Es total"
 
+# Java classpath
+export CLASSPATH="/Users/paul.min/m2/repository"
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/paul.min/.sdkman"
 [[ -s "/Users/paul.min/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/paul.min/.sdkman/bin/sdkman-init.sh"
