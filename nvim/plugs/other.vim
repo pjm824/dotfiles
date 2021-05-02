@@ -2,10 +2,11 @@ Plug 'chrisbra/color_highlight'         " highlight color names and codes in the
 Plug 'tpope/vim-git'                    " git runtime files(syntax, indent, etc)
 Plug 'Yggdroot/indentLine'              " show indent lines
 Plug 'Raimondi/delimitMate'             " automatically close parans, brackets, etc
-Plug 'junegunn/fzf'
-Plug 'tpope/vim-surround'
+
 
 """  plugins to try...
+" Plug 'junegunn/fzf'
+" Plug 'tpope/vim-surround'
 " Plug 'junegunn/peekaboo'
 " Plug 'tpope/vim-fugitive'
 " Plug 'justinmk/vim-sneak'             " jump to any location specified by two characters

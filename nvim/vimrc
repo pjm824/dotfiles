@@ -2,6 +2,7 @@ set nocompatible              " be iMproved, required
 set hidden
 
 " ================ General Config ====================
+
 let mapleader=" "                  " Set leader key to space
 set number                         " Line numbers are good
 set relativenumber                 " Relative numbers are even better
@@ -21,6 +22,9 @@ set splitright                     " open new panes to right
 syntax on                          " turn on syntax highlighting
 filetype plugin indent on
 set encoding=utf-8
+
+" so that J doesn't add a space
+nnoremap J gJ
 
 " ================ Turn Off Swap Files ==============
 set noswapfile
@@ -82,3 +86,10 @@ nmap <silent> // :nohlsearch<CR>
 " Use <TAB> to select the popup menu:
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" ================ Terminal =======================
+set shell=/usr/local/bin/zsh       " set terminal to zsh
+autocmd TermOpen * setlocal nonumber norelativenumber  " dont show line numbers in terminal mode
+
+" exit terminal mode using esc
+tnoremap <Esc> <C-\><C-n>
