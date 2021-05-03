@@ -16,6 +16,7 @@ brew 'sqlite3'
 brew 'xz'
 brew 'zlib'
 brew 'node'
+brew 'fzf'
 
 # specify a directory to install
 cask_args appdir: '/Applications'
