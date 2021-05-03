@@ -4,7 +4,6 @@ Plug 'Yggdroot/indentLine'              " show indent lines
 Plug 'Raimondi/delimitMate'             " automatically close parans, brackets, etc
 
 """  plugins to try...
-" Plug 'junegunn/fzf'
 " Plug 'tpope/vim-surround'
 " Plug 'junegunn/peekaboo'
 " Plug 'tpope/vim-fugitive'
