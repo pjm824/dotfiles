@@ -20,7 +20,6 @@
 
 - link:
     ~/.config/nvim/init.vim: ../nvim/init.vim
-    ~/.config/nvim/ftplugin: ../nvim/ftplugin 
     ~/.vimrc: ../nvim/vimrc
     ~/.ideavimrc: ../nvim/ideavimrc
     ~/.zshrc: ../zsh/zshrc
@@ -28,5 +27,6 @@
     ~/.zprofile: ../zsh/zprofile
     ~/.gitconfig: ../git/gitconfig
     ~/.sdkman/etc/config: ../sdkman/config
+    ~/.fzf.zsh: ../fzf/fzf.zsh
     ~/.config/kitty/: 
         path: '../kitty/*'
