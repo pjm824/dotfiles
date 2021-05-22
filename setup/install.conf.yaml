@@ -10,16 +10,17 @@
 - clean: ['~', '~/.config']
 
 - shell:
-    - ./font.sh
-    - ./keyrate.sh
-    - ./prezto.sh
-    - ./vim-plug.sh
-    - ./sdkman.sh
+    - ../macos/font.sh
+    - ../macos/keyrate.sh
+    - ../zsh/prezto.sh
+    - ../nvim/vim-plug.sh
+    - ../sdkman/sdkman.sh
     - echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells
     - chsh -s /usr/local/bin/zsh
 
 - link:
     ~/.config/nvim/init.vim: ../nvim/init.vim
+    ~/.config/nvim/lua/lsp/init.lua: ../nvim/lua/lsp/init.lua
     ~/.vimrc: ../nvim/vimrc
     ~/.ideavimrc: ../nvim/ideavimrc
     ~/.zshrc: ../zsh/zshrc
@@ -27,6 +28,5 @@
     ~/.zprofile: ../zsh/zprofile
     ~/.gitconfig: ../git/gitconfig
     ~/.sdkman/etc/config: ../sdkman/config
-    ~/.fzf.zsh: ../fzf/fzf.zsh
     ~/.config/kitty/: 
         path: '../kitty/*'
