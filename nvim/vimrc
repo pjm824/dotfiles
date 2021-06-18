@@ -89,7 +89,15 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " ================ Terminal =======================
 set shell=/usr/local/bin/zsh       " set terminal to zsh
-autocmd TermOpen * setlocal nonumber norelativenumber  " dont show line numbers in terminal mode
+augroup neovim_terminal
+    autocmd!
+    " Enter Terminal-mode (insert) automatically
+    autocmd TermOpen * startinsert
+    " Disables number lines on terminal buffers
+    autocmd TermOpen * :set nonumber norelativenumber
+    " allows you to use Ctrl-c on terminal window
+    autocmd TermOpen * nnoremap <buffer> <C-c> i<C-c>
+augroup END
 
 " exit terminal mode using esc
 tnoremap <Esc> <C-\><C-n>

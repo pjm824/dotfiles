@@ -1,1 +1,0 @@
-/Users/paul.min/.dotfiles/setup/../fzf/fzf.zsh

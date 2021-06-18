@@ -1,16 +1,7 @@
-" source regular vimrc
-set runtimepath^=~/.vim runtimepath+=~/.vim/after
-let &packpath = &runtimepath
-source ~/.vimrc
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
-"call plug#begin('~/.local/share/nvim/plugged')
-"for f in glob("~/.dotfiles/nvim/plugs/*.vim", 0, 1) | exe "source" f | endfor
-"call plug#end()
-"
-"" lsp/init.lua
-lua require('init')
-
-" todo: move to lua
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>

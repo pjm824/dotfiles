@@ -9,7 +9,7 @@
     branch = auto
     ui = true
 [core]
-    editor = vim
+    editor = vi
 [apply]
     whitespace = nowarn
 [mergetool]

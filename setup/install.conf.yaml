@@ -7,7 +7,11 @@
     shell:
       stdout: true
 
-- clean: ['~', '~/.config']
+- clean:
+    ~/:
+        force: true
+    ~/.config:
+        recursive: true
 
 - shell:
     - ../macos/font.sh
@@ -20,7 +24,8 @@
 
 - link:
     ~/.config/nvim/init.vim: ../nvim/init.vim
-    ~/.config/nvim/lua/lsp/init.lua: ../nvim/lua/lsp/init.lua
+    ~/.config/nvim/lua/init.lua: ../nvim/lua/init.lua
+    #~/.config/nvim/lua/lsp/init.lua: ../nvim/lua/lsp/init.lua
     ~/.vimrc: ../nvim/vimrc
     ~/.ideavimrc: ../nvim/ideavimrc
     ~/.zshrc: ../zsh/zshrc
