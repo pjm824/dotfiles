@@ -1,6 +1,5 @@
 <ol>
-<li>run brew/brew.sh</li>
-<li>run sudo setup/install</li>
-<li>start tmux and press prefix + i to load plugins</li>
-<li>pip install ipython jedi</li>
+<li>run macos/brew/brew.sh</li>
+<li>run setup/install</li>
+<li>open neovim and run :PackerInstall</li>
 </ol>
