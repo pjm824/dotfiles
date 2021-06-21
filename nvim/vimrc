@@ -26,6 +26,11 @@ set encoding=utf-8
 " so that J doesn't add a space
 nnoremap J gJ
 
+" for theme colors
+if has('termguicolors')
+  set termguicolors
+endif
+
 " ================ Turn Off Swap Files ==============
 set noswapfile
 set nobackup
@@ -86,18 +91,3 @@ nmap <silent> // :nohlsearch<CR>
 " Use <TAB> to select the popup menu:
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-" ================ Terminal =======================
-set shell=/usr/local/bin/zsh       " set terminal to zsh
-augroup neovim_terminal
-    autocmd!
-    " Enter Terminal-mode (insert) automatically
-    autocmd TermOpen * startinsert
-    " Disables number lines on terminal buffers
-    autocmd TermOpen * :set nonumber norelativenumber
-    " allows you to use Ctrl-c on terminal window
-    autocmd TermOpen * nnoremap <buffer> <C-c> i<C-c>
-augroup END
-
-" exit terminal mode using esc
-tnoremap <Esc> <C-\><C-n>

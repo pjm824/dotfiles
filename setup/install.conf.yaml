@@ -23,9 +23,9 @@
     - chsh -s /usr/local/bin/zsh
 
 - link:
-    ~/.config/nvim/init.vim: ../nvim/init.vim
-    ~/.config/nvim/lua/init.lua: ../nvim/lua/init.lua
-    #~/.config/nvim/lua/lsp/init.lua: ../nvim/lua/lsp/init.lua
+    ~/.config/nvim/init.lua: ../nvim/init.lua
+    ~/.config/nvim/lua: 
+        path: '../nvim/lua/*'
     ~/.vimrc: ../nvim/vimrc
     ~/.ideavimrc: ../nvim/ideavimrc
     ~/.zshrc: ../zsh/zshrc
