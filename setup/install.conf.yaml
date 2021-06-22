@@ -17,7 +17,6 @@
     - ../macos/font.sh
     - ../macos/keyrate.sh
     - ../zsh/prezto.sh
-    - ../nvim/vim-plug.sh
     - ../sdkman/sdkman.sh
     - echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells
     - chsh -s /usr/local/bin/zsh
