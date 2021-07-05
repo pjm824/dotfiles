@@ -71,7 +71,7 @@ nnoremap ^ 0
 " ================= Buffers ========================
 map <Leader>n :bn<cr>
 map <Leader>p :bp<cr>
-map <Leader>d :bd<cr>  
+nmap <leader>d :bp\|bd! #<CR>
 
 " ================= Windows ========================
 " Navigate windows using ctrl+h/j/k/l
