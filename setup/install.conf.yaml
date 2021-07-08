@@ -22,17 +22,14 @@
     - chsh -s /usr/local/bin/zsh
 
 - link:
-    ~/.config/nvim/init.vim: ../nvim/init.vim
-    ~/.config/nvim/plugs/: 
-        path: '../nvim/plugs/*'
-    ~/.config/nvim/lua/: 
-        path: '../nvim/lua/*'
-    ~/.vimrc: ../nvim/vimrc
-    ~/.ideavimrc: ../nvim/ideavimrc
-    ~/.zshrc: ../zsh/zshrc
-    ~/.zpreztorc: ../zsh/zpreztorc
-    ~/.zprofile: ../zsh/zprofile
-    ~/.gitconfig: ../git/gitconfig
+    ~/.config/nvim/: 
+        path: '../nvim/.config/nvim/*'
+    ~/.vimrc: ../nvim/.vimrc
+    ~/.ideavimrc: ../nvim/.ideavimrc
+    ~/.zshrc: ../zsh/.zshrc
+    ~/.zpreztorc: ../zsh/.zpreztorc
+    ~/.zprofile: ../zsh/.zprofile
+    ~/.gitconfig: ../git/.gitconfig
     ~/.sdkman/etc/config: ../sdkman/config
     ~/.config/kitty/: 
-        path: '../kitty/*'
+        path: '../kitty/.config/kitty/*'
