@@ -16,6 +16,8 @@ brew 'node'
 brew 'fzf'
 brew 'ripgrep'
 brew 'bat'
+brew 'exa'
+brew 'git-delta'
 
 # specify a directory to install
 cask_args appdir: '/Applications'

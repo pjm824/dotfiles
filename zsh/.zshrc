@@ -37,8 +37,8 @@ TIMEFMT="%U user %S system %P cpu %*Es total"
 # Java classpath
 export CLASSPATH="/Users/paul.min/m2/repository"
 
-# list directories first
-alias ls='/usr/local/bin/gls --color -h --group-directories-first'
+# use exa instead of ls
+alias ls='exa'
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/paul.min/.sdkman"
