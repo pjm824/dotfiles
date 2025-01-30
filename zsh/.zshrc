@@ -1,45 +1,35 @@
-# shortcut to this dotfiles path is $ZSH
-export ZSH=$HOME/.dotfiles
+### setting up antidote
+source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
+antidote load
 
-# Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
+### use GNU coreutils
+export PATH="$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
+export MANPATH="$HOMEBREW_PREFIX/opt/coreutils/libexec/gnuman:$MANPATH"
 
-# Source zshlocal file if exists
-if [[ -f ~/.zshlocal ]]; then;
-    source ~/.zshlocal
-fi
+### correct with thefuck
+eval $(thefuck --alias)
 
-# all of our zsh files
-typeset -U config_files
-config_files=($ZSH/**/*.zsh)
+### use starship.rs for prompt
+eval "$(starship init zsh)"
 
-autoload -U compinit && compinit
+### config for marlonrichert/zsh-autocomplete
+bindkey              '^I'         menu-complete
+bindkey "$terminfo[kcbt]" reverse-menu-complete
+zstyle ':autocomplete:*complete*:*' insert-unambiguous yes	# all Tab widgets
+zstyle ':autocomplete:*history*:*' insert-unambiguous yes	# all history widgets
+zstyle ':autocomplete:menu-search:*' insert-unambiguous yes	# ^S
+zstyle ':autocomplete:*' add-space executables aliases functions builtins reserved-words commands
 
-for file in $config_files
-do
-  source $file
-done
+### aliases
+alias ls='eza'
+alias vim='nvim'
 
-unset config_files
-
-# Correct spelling for commands
-setopt correct
-
-# don't expand aliases _before_ completion has finished (like: git comm-[tab])
-setopt complete_aliases
-
-# Long running processes should return time after they complete. Specified in seconds.
-REPORTTIME=2
-TIMEFMT="%U user %S system %P cpu %*Es total"
-
-# Java classpath
-export CLASSPATH="/Users/paul.min/m2/repository"
-
-# use exa instead of ls
-alias ls='exa'
+### pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/paul.min/.sdkman"
-[[ -s "/Users/paul.min/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/paul.min/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+

@@ -1,6 +1,0 @@
-[submodule "setup/dotbot"]
-	path = setup/dotbot
-	url = https://github.com/anishathalye/dotbot.git
-[submodule "zsh/external-modules/nix-zsh-completions"]
-	path = zsh/external-modules/nix-zsh-completions
-	url = git@github.com:spwhitt/nix-zsh-completions.git

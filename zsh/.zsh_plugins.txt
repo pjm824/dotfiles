@@ -1,0 +1,6 @@
+zdharma-continuum/fast-syntax-highlighting  # Syntax highlighting
+zsh-users/zsh-autosuggestions               # Auto-suggestions
+marlonrichert/zsh-autocomplete		    # Auto-complete
+zsh-users/zsh-history-substring-search      # Up/Down to search history
+MichaelAquilina/zsh-you-should-use	    # tells you able aliases you can use
+https://github.com/fdellwing/zsh-bat	    # cat with bat.  (need bat installed)
